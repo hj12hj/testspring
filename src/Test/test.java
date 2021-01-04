@@ -1,24 +1,25 @@
 package Test;
 
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-import pojo.ListPeo;
 
-import java.util.Map;
+import Config.spconfig;
+import org.junit.Test;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import pojo.People;
+
+
 
 public class test {
 
-    public static void main(String[] args) {
 
-        ApplicationContext ac = new ClassPathXmlApplicationContext("Beanann.xml");
+    @Test
+    public void show() {
+        AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(spconfig.class);
 
-        ListPeo sp = ac.getBean("listPeo",ListPeo.class);
+        People sp = ac.getBean("people", People.class);
 
         System.out.println(sp.toString());
-
     }
-
 
 
 }
