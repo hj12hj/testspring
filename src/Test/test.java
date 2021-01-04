@@ -1,10 +1,9 @@
 package Test;
 
-import annoce.Super;
-import org.springframework.beans.factory.BeanFactory;
-import org.springframework.beans.factory.ListableBeanFactory;
+
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import pojo.People;
+import pojo.ServerPeo;
 
 import java.util.Map;
 
@@ -12,30 +11,14 @@ public class test {
 
     public static void main(String[] args) {
 
-        BeanFactory fac = new ClassPathXmlApplicationContext("applicationcontext.xml");
+        ApplicationContext ac = new ClassPathXmlApplicationContext("Bean.xml");
 
-        lookupByAnnotation(fac);
+       ServerPeo sp = ac.getBean("serpeo",ServerPeo.class);
 
+        System.out.println(sp.toString());
 
-//        if (fac instanceof ListableBeanFactory)
-//        {
-//            ListableBeanFactory lb = (ListableBeanFactory) fac;
-//
-//            Map<String,People> Peoples = lb.getBeansOfType(People.class);
-//
-//            System.out.println(Peoples);
-//        }
     }
 
-    private static void lookupByAnnotation(BeanFactory fac) {
-        if (fac instanceof ListableBeanFactory)
-        {
-            ListableBeanFactory lb = (ListableBeanFactory) fac;
 
-            Map<String,People> Peoples = (Map)lb.getBeansWithAnnotation(Super.class);
-
-            System.out.println(Peoples);
-        }
-    }
 
 }

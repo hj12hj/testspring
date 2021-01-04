@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean id="peo" class="pojo.People">
+        <property name="name" value="hj"/>
+        <property name="age" value="15"/>
+    </bean>
+
+    <bean id="serpeo" class="pojo.ServerPeo">
+        <property name="map">
+            <map>
+                <entry key-ref="peo" value="hj"/>
+            </map>
+        </property>
+    </bean>
+
+
+</beans>
