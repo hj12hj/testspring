@@ -12,7 +12,7 @@
     <bean id="serpeo" class="pojo.ServerPeo">
         <property name="map">
             <map>
-                <entry key-ref="peo" value="hj"/>
+                <entry key="hj" value-ref="peo"/>
             </map>
         </property>
     </bean>
