@@ -10,7 +10,7 @@ public class intest {
     public static void main(String[] args) {
         ApplicationContext beanFactory = new ClassPathXmlApplicationContext("injection.xml");
 
-//        resppeople rep = beanFactory.getBean("rsppeople", resppeople.class);
+       resppeople rep = beanFactory.getBean("rsppeople", resppeople.class);
 
 //        System.out.println(beanFactory.getBean(BeanFactory.class));
     }
