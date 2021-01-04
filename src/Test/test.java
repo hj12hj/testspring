@@ -3,7 +3,7 @@ package Test;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import pojo.SuperPeople;
+import pojo.ListPeo;
 
 import java.util.Map;
 
@@ -13,7 +13,7 @@ public class test {
 
         ApplicationContext ac = new ClassPathXmlApplicationContext("Beanann.xml");
 
-        SuperPeople sp = ac.getBean("sp",SuperPeople.class);
+        ListPeo sp = ac.getBean("listPeo",ListPeo.class);
 
         System.out.println(sp.toString());
 
