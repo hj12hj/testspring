@@ -1,10 +1,12 @@
 package pojo;
 
-import annoce.Super;
 
-@Super
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component("sp")
 public class SuperPeople extends People{
-
+    @Value("address")
     private String address;
 
     public String getAddress() {
